@@ -3,43 +3,9 @@
 <head>
 <title>web1 - WELCOME</title>
 <meta charset="utf-8">
-<script>
-  // 다크모드handler 함수
-  function LinkSetColor(color){
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i].style.color = color;
-      i++;
-    }
-  }
-  function BodySetColor(color){
-    document.querySelector('body').style.color = color;
-  }
-
-  function BodySetBack(color){
-    document.querySelector('body').style.backgroundColor = color;
-  }
-  
-  function nightDayHandler(self){
-      var target = document.querySelector('body');
-  if(self.value == 'night'){
-      BodySetBack('#000'); 
-      BodySetColor('#fff');
-      self.value = 'day';
-
-      LinkSetColor('powderblue');
-
-  } else {
-    BodySetBack('#fff');
-    BodySetColor('#000');
-    self.value = 'night'
-    
-    LinkSetColor('blue');
-  }
-}
-
-</script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" 
+integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
 </head>
 <body>
 <h1> <a href="index.html">WEB</a></h1>
