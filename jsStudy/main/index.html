@@ -3,24 +3,49 @@
 <head>
 <title>web1 - WELCOME</title>
 <meta charset="utf-8">
+<script>
+  // 다크모드handler 함수
+  function LinkSetColor(color){
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = color;
+      i++;
+    }
+  }
+  function BodySetColor(color){
+    document.querySelector('body').style.color = color;
+  }
+
+  function BodySetBack(color){
+    document.querySelector('body').style.backgroundColor = color;
+  }
+  
+  function nightDayHandler(self){
+      var target = document.querySelector('body');
+  if(self.value == 'night'){
+      BodySetBack('#000'); 
+      BodySetColor('#fff');
+      self.value = 'day';
+
+      LinkSetColor('powderblue');
+
+  } else {
+    BodySetBack('#fff');
+    BodySetColor('#000');
+    self.value = 'night'
+    
+    LinkSetColor('blue');
+  }
+}
+
+</script>
 </head>
 <body>
 <h1> <a href="index.html">WEB</a></h1>
 
 <!-- 다크모드 버튼1 -->
-<input id="night_day" type="button" value="night" onclick="
-  var target = document.querySelector('body');
-if(this.value == 'night'){
-    target.style.backgroundColor='#000';
-    target.style.color='#fff';
-  this.value = 'day';
-
-} else {
-    target.style.backgroundColor='#fff';
-    target.style.color='#000';
-  this.value = 'night'
-}
-">
+<input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">
 <ol>
   <li> <a href="1.html">HTML</a></li>
   <li> <a href="2.html>">CSS</a></li>
@@ -52,18 +77,6 @@ if(this.value == 'night'){
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </p>
 <!-- 다크모드 버튼 2 -->
-<input id="night_day2" type="button" value="night" onclick="
-  var target = document.querySelector('body');
-if(this.value == 'night'){
-  target.style.backgroundColor='#000';
-  target.style.color='#fff';
-  this.value = 'day';
-
-} else {
-  target.style.backgroundColor='#fff';
-  target.style.color='#000';
-  this.value = 'night'
-}
-">
+<input id="night_day2" type="button" value="night" onclick="nightDayHandler(this)">
 </body>
 </html>
